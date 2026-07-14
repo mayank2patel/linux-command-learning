@@ -33,4 +33,3 @@ command options arguments
 
 1. Is the shell the same as the terminal?
 Not excatly, The terminal is the window or application that we type into and shell is the program running inside it.
-
