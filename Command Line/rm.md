@@ -8,6 +8,15 @@ rm [OPTIONS] FILE...
 
 The `rm` command removes directory entries from the filesystem — in normal terms, it deletes files. Unlike many desktop environments, command-line deletion usually does **not** move files to a trash folder, so you should check your command before pressing Enter.
 
+> 🧠 **Think of it like…** feeding a document to a shredder — there's no recycle bin to fish it back out of, so aim carefully.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["rm file"] --> B["unlink from directory"] --> C["space freed — gone"]
+```
+
 ## Remove a Single File
 
 To remove one file, pass the filename to `rm`.

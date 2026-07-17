@@ -2,6 +2,17 @@
 
 How to view and change who owns a file or directory (`chown`) and who is allowed to read, write, or execute it (`chmod`).
 
+> 🧠 **Think of it like…** keys and mailboxes. `chmod` hands out keys — **read** is permission to look, **write** is a pen to change it, **execute** is a green light to run it — set separately for you, your group, and everyone else. `chown` is like changing the name on the mailbox.
+
+**Under the hood — every file carries three sets of `rwx` bits:**
+
+```mermaid
+flowchart LR
+    F["file mode: rwxrwxr--"] --> O["owner: rwx"]
+    F --> G["group: rwx"]
+    F --> W["others: r--"]
+```
+
 ## Creating a New File
 
 ```bash

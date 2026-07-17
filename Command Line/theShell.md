@@ -1,5 +1,14 @@
 # The Shell
 
+> 🧠 **Think of it like…** texting the computer precise instructions instead of pointing and clicking your way around.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["you type a command"] --> B["shell"] --> C["OS runs it"] --> D["result printed back"]
+```
+
 ## What is the Linux shell
 1. A shell is a program that lets us type command and accepts them, then ask the OS to run them and prints the result back to us. 
 2. In the GUI, we click windows, menu, button but in shell it is set at typing precise instructions. 

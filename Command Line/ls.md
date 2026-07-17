@@ -9,6 +9,15 @@ ls
 ls /home/pete
 ```
 
+> 🧠 **Think of it like…** opening a drawer to see what's inside. Flags decide how much detail you want — a quick glance, or the full inventory.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["directory"] --> B["read entries"] --> C["print names / details"]
+```
+
 ## Viewing Hidden files
 
 Not all files in a directory are visible by default. In Linux, filenames that start with a dot `(.)` are hidden. You can view them with the `-a` option, which stands for all.

@@ -6,6 +6,15 @@ As you work with files, you will need to organize them into directories. The pri
 mkdir [OPTIONS] DIRECTORY...
 ```
 
+> 🧠 **Think of it like…** putting a fresh, empty folder into the filing cabinet.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["mkdir dir"] --> B["create directory entry"] --> C["empty folder ready"]
+```
+
 ## Creating a Single Directory
 
 The most basic use of `mkdir` is to create a single new directory. If the directory does not already exist, this command creates it in your current location.

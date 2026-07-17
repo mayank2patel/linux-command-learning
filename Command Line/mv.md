@@ -8,6 +8,15 @@ mv [OPTIONS] SOURCE DESTINATION
 
 Unlike `cp`, which creates a copy, `mv` changes where the original item lives or what it is called.
 
+> 🧠 **Think of it like…** moving a book to a new shelf — same book, new spot, nothing left behind. Renaming is just "moving" it to the same shelf under a new title.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["SOURCE"] --> B["relink to new path"] --> C["DEST — original gone"]
+```
+
 ## Renaming Files and Directories
 
 One of the most common uses of `mv` is renaming. The syntax is straightforward: specify the old name and the new name.

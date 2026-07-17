@@ -8,6 +8,15 @@ cp [OPTIONS] SOURCE DESTINATION
 
 You can copy one file to another file, one or more files into a directory, or an entire directory tree with the right option.
 
+> 🧠 **Think of it like…** a photocopier: the original stays on the tray and a duplicate comes out. `-r` means "copy the whole binder, every page inside."
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["SOURCE"] --> B["read bytes"] --> C["write duplicate"] --> D["DEST"]
+```
+
 ## Basic File Copying
 
 To copy a file, you specify the source file and the destination directory or path.

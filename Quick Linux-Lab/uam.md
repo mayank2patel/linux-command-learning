@@ -4,6 +4,17 @@ How to create, modify, and delete user accounts, as well as how to set and chang
 
 > **Note:** Most commands here require administrator privileges, so they are prefixed with `sudo`. Running them as a regular user results in a "permission denied" error.
 
+> 🧠 **Think of it like…** an HR department. `useradd` opens a new employee record, `passwd` sets their door lock, `usermod` edits their file (desk, department, clubs), and `userdel` off-boards them.
+
+**Under the hood — the account lifecycle, and where it's stored:**
+
+```mermaid
+flowchart LR
+    A["useradd joker"] --> B["passwd joker"] --> C["usermod -aG sudo joker"] --> D["userdel -r joker"]
+    A -. writes .-> P["/etc/passwd"]
+    B -. hashes into .-> S["/etc/shadow"]
+```
+
 ## Creating a New User
 
 Let's start by creating a new user account named `joker`.

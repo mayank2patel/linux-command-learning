@@ -1,8 +1,17 @@
-# less
+# less (Page Through Files)
 
 When viewing text files that are too large to fit on a single screen, the less command is an invaluable tool. As the old Unix saying goes, "less is more." \
 This is a play on the fact that there is also a more command with similar functionality. \
 The less utility displays text in a paged format, allowing you to navigate through a file without flooding your terminal.
+
+> 🧠 **Think of it like…** flipping a book page by page instead of unrolling the whole scroll on the floor. You can search, jump, and back up.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["open file"] --> B["load one screenful"] --> C["page on demand"] --> D["press q to quit"]
+```
 
 ## Getting Started with the Less command
 

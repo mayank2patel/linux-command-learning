@@ -7,6 +7,15 @@ The primary tool for this is the cd command, short for change directory. It chan
 cd [DIRECTORY]
 ```
 
+> 🧠 **Think of it like…** walking into a different room. The house is the same; only where you are standing changes.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["cd DIR"] --> B["update $PWD"] --> C["shell now in DIR"]
+```
+
 ## Understanding Paths
 
 There are two ways to specify a path: absolute and relative.

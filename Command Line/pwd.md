@@ -2,6 +2,15 @@
 
 In Linux, files and directories are organized in a *hierarchy* called the **filesystem**.
 
+> 🧠 **Think of it like…** asking "where am I?" and getting your full street address — from the front door all the way down to your room.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["pwd"] --> B["shell reads $PWD"] --> C["print the full path"]
+```
+
 ## The Directory Tree in Linux
 
 The entire filesystem starts from a single top-level directory called the root directory, represented by a forward slash **/**.\

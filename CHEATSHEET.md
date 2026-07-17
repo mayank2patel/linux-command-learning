@@ -48,6 +48,47 @@ history
 
 ---
 
+## Getting Help
+
+### `man` — manual pages
+Open the full manual for a command: description, options, and usage. See [man.md](Command%20Line/man.md).
+
+```bash
+man COMMAND
+man 5 passwd        # read a specific numbered section
+```
+
+| Key (inside `man`) | Effect |
+| --- | --- |
+| `/text` | Search forward for `text`. |
+| `n` / `N` | Jump to the next / previous match. |
+| `q` | Quit. |
+
+### `whatis` — one-line description
+Prints the one-line summary of a command from its man page. See [whatis.md](Command%20Line/whatis.md).
+
+```bash
+whatis cat
+```
+
+### `apropos` — search descriptions
+Searches man page descriptions by keyword — useful when you forget a command's name.
+
+```bash
+apropos password
+```
+
+### `help` — Bash built-in help
+Shows help for Bash built-ins such as `cd`, `echo`, and `history`. See [help.md](Command%20Line/help.md).
+
+```bash
+help cd
+COMMAND --help      # usage summary for most external programs
+type COMMAND        # is it a built-in or an external program?
+```
+
+---
+
 ## Listing & Inspecting
 
 ### `ls` — list directory contents
@@ -316,12 +357,88 @@ Requires `sudo`. See the full walkthrough in [uam.md](Quick%20Linux-Lab/uam.md).
 
 ---
 
+## System Info
+
+Quick reconnaissance of who you are and what the machine is doing. See the [System Reconnaissance lab](Quick%20Linux-Lab/TheLayofLand.md).
+
+### `whoami` — current user
+Prints the username you are currently acting as.
+
+```bash
+whoami
+```
+
+### `id` — user & group IDs
+Shows your UID, primary GID, and every group you belong to.
+
+```bash
+id
+id -u        # numeric user ID only
+id -nG       # group names only
+```
+
+### `uname` — system information
+Reports kernel and system details.
+
+```bash
+uname        # kernel name
+uname -a     # everything on one line
+```
+
+| Option | Effect |
+| --- | --- |
+| `-a` | All information. |
+| `-s` | Kernel name (the default). |
+| `-r` | Kernel release. |
+| `-m` | Hardware architecture. |
+| `-n` | Network (host) name. |
+
+### `uptime` — how long the system has run
+Shows the time, uptime, logged-in users, and load averages (1, 5, 15 min).
+
+```bash
+uptime
+uptime -p        # pretty, human-readable form
+```
+
+### `top` — live process monitor
+Interactive, auto-refreshing view of CPU, memory, and processes. Press `q` to quit.
+
+```bash
+top
+```
+
+| Key (inside `top`) | Effect |
+| --- | --- |
+| `q` | Quit. |
+| `P` | Sort by CPU usage. |
+| `M` | Sort by memory usage. |
+| `k` | Kill a process by PID. |
+
+---
+
+## Streams & Redirection
+
+Control where a command's input comes from and where its output (and errors) go. See the [Text-Fu notes](Text-Fu/stfout.md) for full walkthroughs. Each stream has a numeric **file descriptor**: `0` = stdin, `1` = stdout, `2` = stderr.
+
+| Operator | What it does |
+| --- | --- |
+| `command > file` | Redirect `stdout` to a file (overwrite). |
+| `command >> file` | Redirect `stdout` to a file (append). |
+| `command < file` | Redirect `stdin` — read input from a file. |
+| `a \| b` | Pipe: send `a`'s `stdout` into `b`'s `stdin`. |
+| `command \| tee file` | Show output **and** save it to a file at once. |
+| `command 2> file` | Redirect `stderr` (errors) to a file. |
+| `command 2>&1` | Send `stderr` wherever `stdout` currently points. |
+| `command &> file` | Redirect both `stdout` and `stderr` to a file. |
+| `command 2> /dev/null` | Discard error messages. |
+
+---
+
 ## Handy Shell Extras
 
 | Feature | What it does |
 | --- | --- |
-| `command > file` | Redirect output to a file (overwrite). |
-| `command >> file` | Redirect output to a file (append). |
 | `*` | Wildcard: match any sequence of characters. |
 | `?` | Wildcard: match any single character. |
 | `[abc]` | Wildcard: match any one of the enclosed characters. |

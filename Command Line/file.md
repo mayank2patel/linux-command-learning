@@ -1,4 +1,4 @@
-# FILE
+# file (Determine File Type)
 
 In the previous lesson, we learned about `touch`. Did you notice that the filename didn't have to conform to standard naming conventions, like you've probably seen with other operating systems such as Windows? Normally, you would expect a file called `banana.jpeg` to be a JPEG picture file.
 
@@ -10,6 +10,16 @@ To find out what kind of file a file is, you can use the file command. It will s
 file banana.jpg
 banana.jpg: JPEG image data
 ```
+
+> 🧠 **Think of it like…** a bouncer checking the actual ID instead of trusting the name tag. A `.jpg` that's really a PDF gets caught.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["file banana.jpg"] --> B["read the magic bytes"] --> C["report the real type"]
+```
+
 ## Why File Extensions Are Not Enough
 
 Linux tools usually do not require a file extension to decide what a file is. A shell script can be named `backup`, a text file can be named `README`, and an image can have the wrong extension. The `file` command inspects the file's contents and metadata to make a better guess.

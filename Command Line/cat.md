@@ -2,6 +2,15 @@
 
 After learning to navigate the filesystem, the next step is to view the contents of files. A fundamental and versatile tool for this is the `cat` command. The name `cat` is short for **"concatenate,"** which hints at its ability to link files together.
 
+> 🧠 **Think of it like…** unrolling a scroll and reading it straight through, top to bottom — great for short files, overwhelming for long ones.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["file(s)"] --> B["read bytes"] --> C["stdout — the screen"]
+```
+
 ## Viewing File contents
 
 The most basic use of the cat command is to display the content of a single file directly in your terminal.

@@ -1,9 +1,20 @@
-# touch
+# touch (Create Files & Update Timestamps)
 
 The touch command is a standard utility on Unix-like operating systems. While its primary purpose is to change `file timestamps`, it is also commonly used to create new, empty files.
 
 ```bash
 touch [OPTIONS] FILE...
+```
+
+> 🧠 **Think of it like…** tapping a file to say "I was here": if it doesn't exist it's created empty, and if it does its "last touched" time is bumped to now.
+
+**Under the hood:**
+
+```mermaid
+flowchart LR
+    A["touch file"] --> B["exists?"]
+    B -->|no| C["create empty file"]
+    B -->|yes| D["bump its timestamp"]
 ```
 
 ## Creating New files
